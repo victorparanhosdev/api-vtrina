@@ -14,13 +14,13 @@ class produtosController {
       const { data } = await produtos;
 
       if (data.length === 0) {
-        throw new AppError("Nenhum resultado encontrado.");
+        return res.status(404).json({message: 'Produto nao existe'});
       }
 
       return res.status(200).json(data);
 
     } catch (error) {
-      throw new AppError("Nenhum resultado encontrado.");
+      throw new AppError("Error ao buscar o produto.", 500);
     }
   }
 }
