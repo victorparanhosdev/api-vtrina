@@ -23,6 +23,9 @@ class produtosController {
       throw new AppError("Error ao buscar o produto.", 500);
     }
   }
+  async criar(req, res){
+
+  }
 }
 
 module.exports = produtosController;
